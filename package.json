@@ -1,0 +1,27 @@
+{
+  "name": "castro-bey",
+  "version": "1.0.0",
+  "description": "Castro Bey's music portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./styles.css --minify",
+    "start": "serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jackafella1/Castro-Bey.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jackafella1/Castro-Bey/issues"
+  },
+  "homepage": "https://github.com/Jackafella1/Castro-Bey#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.10",
+    "serve": "^14.2.3"
+  }
+}
