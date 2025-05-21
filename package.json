@@ -4,7 +4,7 @@
   "description": "Castro Bey's music portfolio website",
   "main": "index.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./styles.css --minify",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./styles.css --minify",
     "start": "serve .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Jackafella1/Castro-Bey#readme",
   "devDependencies": {
-    "tailwindcss": "^3.4.10",
-    "serve": "^14.2.3"
+    "serve": "^14.2.3",
+    "tailwindcss": "^3.4.17"
   }
 }
