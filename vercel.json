@@ -5,5 +5,12 @@
       "use": "@vercel/static"
     }
   ],
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/(.*[^/])",
+      "destination": "/$1/",
+      "permanent": false
+    }
+  ]
 }
