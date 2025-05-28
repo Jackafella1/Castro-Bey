@@ -6,6 +6,12 @@
     }
   ],
   "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/:path*/",
+      "destination": "/:path*"
+    }
+  ],
   "redirects": [
     {
       "source": "/(.*[^/])",
