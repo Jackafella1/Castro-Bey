@@ -1,15 +1,16 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "**/*",
+      "src": "dist/**",
       "use": "@vercel/static"
     }
   ],
-  "outputDirectory": ".",
+  "outputDirectory": "dist",
   "routes": [
     {
-      "src": "/src/(.*)",
-      "dest": "/src/$1"
+      "src": "/(.*)",
+      "dest": "/dist/$1"
     },
     {
       "src": "/images/(.*)",
@@ -17,4 +18,3 @@
     }
   ]
 }
-  
