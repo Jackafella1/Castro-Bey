@@ -1,0 +1,148 @@
+import heroImage from '../images/hero-image.webp';
+
+const App = () => {
+  return (
+    <div>
+      {/* Navbar */}
+      <nav>
+        <div className="container">
+          <h1>Castro Bey</h1>
+          <ul>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#shows">Shows</a></li>
+            <li><a href="#store">Store</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#booking">Booking</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="hero" style={{ backgroundImage: `url(${heroImage})` }}>
+        <div>
+          <h2>Castro Bey</h2>
+          <p>Conscious Hip-Hop from Derby</p>
+          <div className="social-links">
+            <a href="https://open.spotify.com/artist/0919YgSuM4uWtYaSeKgDJ4?web=true" target="_blank" rel="noopener noreferrer">Spotify</a>
+            <a href="https://www.instagram.com/castro_13ey/?hl=en-gb" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Music Section */}
+      <section id="music">
+        <div className="container">
+          <h2>Music</h2>
+          <div className="grid">
+            <div className="card">
+              <h3>Track Name</h3>
+              <p>Available on Spotify</p>
+              <a href="#">Listen Now</a>
+            </div>
+          </div>
+          <p className="placeholder">Replace with Spotify embed or track links from Strapi</p>
+        </div>
+      </section>
+
+      {/* Videos Section */}
+      <section id="videos">
+        <div className="container">
+          <h2>Videos</h2>
+          <div className="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/IGbaxY9nxVc"
+              title="Castro Bey Music Video"
+              allowFullScreen
+            ></iframe>
+            <p className="placeholder">Replace with Castro Bey’s YouTube/Vimeo video URL from Strapi</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Shows Section */}
+      <section id="shows">
+        <div className="container">
+          <h2>Upcoming Shows</h2>
+          <div className="grid">
+            <div className="card">
+              <h3>Derby Live</h3>
+              <p>Date: TBD</p>
+              <p>Location: Derby, UK</p>
+              <a href="#">Get Tickets</a>
+            </div>
+          </div>
+          <p className="placeholder">Replace with Castro Bey’s event details from Strapi</p>
+        </div>
+      </section>
+
+      {/* Store Section */}
+      <section id="store">
+        <div className="container">
+          <h2>Store</h2>
+          <div className="grid">
+            <div className="card">
+              <img src="https://placehold.co/300x300" alt="Castro Bey Tee" />
+              <h3>Castro Bey Tee</h3>
+              <p>$25.00 - Physical Item</p>
+              <button onClick={() => alert('Redirect to Stripe checkout for merch')}>
+                Buy Now
+              </button>
+            </div>
+            <div className="card">
+              <img src="https://placehold.co/300x300" alt="Digital Single" />
+              <h3>Digital Single</h3>
+              <p>$1.99 - MP3 Download</p>
+              <button onClick={() => alert('Redirect to Stripe checkout for music')}>
+                Buy Now
+              </button>
+            </div>
+          </div>
+          <p className="placeholder">Replace with Castro Bey’s merch/music details from Strapi; integrate Stripe checkout at https://castrobey.com/checkout</p>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about">
+        <div className="container">
+          <h2>About Castro Bey</h2>
+          <div className="content">
+            <p>I’m a self-taught music man carrying on the legacy of my grandad "Castro," one of Derby’s finest reggae DJs. My choice of music is conscious hip-hop, aiming to tap into people’s higher selves. I’m an emcee, producer, and engineer, and one of the founding members of the Dredeye Knights, a Derby hip-hop group. I create all my own videos and music, as I just love to create.</p>
+            <p>Update bio via Strapi admin panel at https://admin.castrobey.com</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking Section */}
+      <section id="booking">
+        <div className="container">
+          <h2>Book Castro Bey</h2>
+          <div className="form-container">
+            <p>Want Castro Bey at your event? Hit us up!</p>
+            <div className="form-group">
+              <input type="text" placeholder="Your Name" />
+              <input type="email" placeholder="Your Email" />
+              <textarea placeholder="Event Details"></textarea>
+              <button>Send Inquiry</button>
+            </div>
+            <p className="placeholder">Add Castro Bey’s booking email or manager contact from Strapi</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer>
+        <p>Follow Castro Bey:</p>
+        <div className="social-links">
+          <a href="https://www.instagram.com/castro_13ey/?hl=en-gb" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://open.spotify.com/artist/0919YgSuM4uWtYaSeKgDJ4?web=true" target="_blank" rel="noopener noreferrer">Spotify</a>
+        </div>
+        <p>© 2025 Castro Bey. All rights reserved. Powered by castrobey.com</p>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
+
+
