@@ -1,22 +1,21 @@
 {
   "builds": [
     {
-      "src": "index.html",
+      "src": "**/*",
       "use": "@vercel/static"
     }
   ],
   "outputDirectory": ".",
-  "rewrites": [
+  "trailingSlash": false,
+  "routes": [
     {
-      "source": "/:path*/",
-      "destination": "/:path*"
-    }
-  ],
-  "redirects": [
+      "src": "/src/(.*)",
+      "dest": "/src/$1"
+    },
     {
-      "source": "/(.*[^/])",
-      "destination": "/$1/",
-      "permanent": false
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
     }
   ]
 }
+  
