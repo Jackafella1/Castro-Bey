@@ -6,7 +6,6 @@
     }
   ],
   "outputDirectory": ".",
-  "trailingSlash": false,
   "routes": [
     {
       "src": "/src/(.*)",
