@@ -1,19 +1,41 @@
+import {useState} from 'react';
 import heroImage from '../images/hero-image.webp';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const App = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
+const toggleMenu = () => {
+  setIsMenuOpen(!isMenuOpen);
+
+};
+
+
   return (
     <div>
       {/* Navbar */}
-      <nav>
+      <nav className="navbar">
         <div className="container">
           <h1>Castro Bey</h1>
-          <ul>
-            <li><a href="#music">Music</a></li>
-            <li><a href="#videos">Videos</a></li>
-            <li><a href="#shows">Shows</a></li>
-            <li><a href="#store">Store</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#booking">Booking</a></li>
+          <button
+            className="hamburger"
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
+           >
+            <span></span>
+            <span></span>
+            <span></span>
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+            </button> 
+          <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+            <li><a href="#music" onClick={toggleMenu}>Music</a></li>
+            <li><a href="#videos" onClick={toggleMenu}>Videos</a></li>
+            <li><a href="#shows" onClick={toggleMenu}>Shows</a></li>
+            <li><a href="#store" onClick={toggleMenu}>Store</a></li>
+            <li><a href="#about" onClick={toggleMenu}>About</a></li>
+            <li><a href="#booking" onClick={toggleMenu}>Booking</a></li>
           </ul>
         </div>
       </nav>
@@ -142,6 +164,8 @@ const App = () => {
     </div>
   );
 };
+
+
 
 export default App;
 
