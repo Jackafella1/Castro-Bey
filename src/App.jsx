@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import heroImage from '../images/hero-image.webp';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import './styles.css';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -102,28 +103,57 @@ const toggleMenu = () => {
       <section id="store">
         <div className="container">
           <h2>Store</h2>
-          <div className="grid">
-            <div className="card">
-              <img src="https://placehold.co/300x300" alt="Castro Bey Tee" />
-              <h3>Castro Bey Tee</h3>
-              <p>$25.00 - Physical Item</p>
-              <button onClick={() => alert('Redirect to Stripe checkout for merch')}>
-                Buy Now
+          <p className="lead">Support Castro Bey by purchasing music directly from Bandcamp.</p>
+          <div className="bandcamp-grid">
+            <div className="bandcamp-card">
+              <iframe
+                style={{ border: 0, width: '100%', height: '470px' }}
+                src="https://bandcamp.com/EmbeddedPlayer/album=76880944/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+                seamless
+                title="2 Moorish by Castro Bey"
+              >
+                <a href="https://castrobey.bandcamp.com/album/2-moorish">2 Moorish by Castro Bey</a>
+              </iframe>
+              <button className="buy-now">
+                <a href="https://castrobey.bandcamp.com/album/2-moorish" target="_blank" rel="noopener noreferrer">Buy Now</a>
               </button>
             </div>
-            <div className="card">
-              <img src="https://placehold.co/300x300" alt="Digital Single" />
-              <h3>Digital Single</h3>
-              <p>$1.99 - MP3 Download</p>
-              <button onClick={() => alert('Redirect to Stripe checkout for music')}>
-                Buy Now
+            <div className="bandcamp-card">
+              <iframe 
+              style={{ border: 0, width: '350px', height: '470px', }}
+              src="https://bandcamp.com/EmbeddedPlayer/album=827681123/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" 
+              seamless
+              title="Bey Prints instrumentals Vo 1"
+              >
+                <a href="https://castrobey.bandcamp.com/album/bey-prints-instrumentals-vol1">Bey Prints Instrumentals Vol1 by Castro Bey Productions</a>
+                </iframe>
+                <button className="buy-now">
+                <a href="https://castrobey.bandcamp.com/album/bey-prints-instrumentals-vol1" target="_blank" rel="noopener noreferrer">Buy Now</a>
               </button>
+            
+            </div>
+            <div className="bandcamp-card">
+              <iframe
+                style={{ border: 0, width: '350px', height: '470px' }}
+                src="https://bandcamp.com/EmbeddedPlayer/album=313216474/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+                seamless
+                title="Bey Prints Instrumentals Vol 2 by Castro Bey Recordings"
+              >
+                <a href="https://castrobey.bandcamp.com/album/bey-prints-instrumentals-vol-2">Bey Prints Instrumentals Vol 2 by Castro Bey Recordings</a>
+              </iframe>
+              <button className="buy-now">
+                <a href="https://castrobey.bandcamp.com/album/bey-prints-instrumentals-vol1" target="_blank" rel="noopener noreferrer">Buy Now</a>
+              </button>
+
             </div>
           </div>
-          <p className="placeholder">Replace with Castro Bey’s merch/music details from Strapi; integrate Stripe checkout at https://castrobey.com/checkout</p>
+          <p className="bandcamp-cta">
+            Visit <a href="https://castrobey.bandcamp.com/" target="_blank" rel="noopener noreferrer">Castro Bey’s Bandcamp</a> for more music and exclusive merch!
+          </p>
         </div>
       </section>
 
+               
       {/* About Section */}
       <section id="about">
         <div className="container">

@@ -47,7 +47,7 @@ nav h1 {
 }
 
 .nav-links li a:hover {
-  color: #ec4899; /* hover:text-gray-400 */
+  color: #9ca3af; /* hover:text-gray-400 */
 }
 
 /* Hamburger Menu */
@@ -279,54 +279,71 @@ section#store h2 {
   margin-bottom: 2rem; /* mb-8 */
 }
 
-section#store .grid {
+section#store .lead {
+  font-size: 1.25rem; /* text-xl */
+  text-align: center;
+  margin-bottom: 2rem; /* mb-8 */
+  color: #d1d5db; /* text-gray-300 */
+}
+
+section#store .bandcamp-grid {
   display: grid; /* grid */
   grid-template-columns: 1fr; /* grid-cols-1 */
   gap: 2rem; /* gap-8 */
 }
 
-section#store .card {
+section#store .bandcamp-card {
   background-color: #374151; /* bg-gray-700 */
-  padding: 1.5rem; /* p-6 */
+  padding: 1rem; /* p-4 */
   border-radius: 0.5rem; /* rounded-lg */
+  overflow: visible; /* Prevent clipping */
 }
 
-section#store .card img {
-  width: 100%; /* w-full */
-  height: 12rem; /* h-48 */
-  object-fit: cover; /* object-cover */
-  border-radius: 0.5rem; /* rounded-lg */
-  margin-bottom: 1rem; /* mb-4 */
+section#store .bandcamp-card iframe {
+  width: 100%;
+  height: 470px; /* Matches embed height */
+  border: none;
 }
 
-section#store .card h3 {
-  font-size: 1.25rem; /* text-xl */
-  font-weight: 600; /* font-semibold */
-}
-
-section#store .card p {
-  margin-top: 0.5rem; /* mt-2 */
-}
-
-section#store .card button {
-  width: 100%; /* w-full */
+section#store .bandcamp-card .buy-now {
+  display: block;
+  width: 100%;
   margin-top: 1rem; /* mt-4 */
-  background-color: #dc2626; /* bg-red-600 */
-  padding: 0.5rem 1rem; /* px-4 py-2 */
+  padding: 0.75rem; /* p-3 */
+  background-color: #22c55e; /* bg-green-500 */
+  color: #ffffff; /* text-white */
+  text-align: center;
   border-radius: 0.5rem; /* rounded-lg */
-  color: #ffffff;
   border: none;
   cursor: pointer;
+  font-size: 1rem; /* text-base */
+  text-decoration: none;
 }
 
-section#store .card button:hover {
-  background-color: #b91c1c; /* hover:bg-red-700 */
+section#store .bandcamp-card .buy-now:hover {
+  background-color: #16a34a; /* hover:bg-green-600 */
 }
 
-section#store .placeholder {
+section#store .bandcamp-card .buy-now a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+}
+
+section#store .bandcamp-cta {
   text-align: center; /* text-center */
   margin-top: 2rem; /* mt-8 */
-  color: #9ca3af; /* text-gray-400 */
+  font-size: 1.125rem; /* text-lg */
+}
+
+section#store .bandcamp-cta a {
+  color: #22c55e; /* text-green-500 */
+  text-decoration: none;
+}
+
+section#store .bandcamp-cta a:hover {
+  text-decoration: underline;
+  color: #16a34a; /* hover:text-green-600 */
 }
 
 /* About Section */
@@ -456,16 +473,13 @@ footer p:last-child {
   }
 
   section#music .grid,
-  section#shows .grid {
-    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+  section#shows .grid,
+  section#store .bandcamp-grid {
+    grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
   }
 
   section#videos iframe {
     height: 24rem; /* md:h-96 */
-  }
-
-  section#store .grid {
-    grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
   }
 }
 
@@ -494,16 +508,6 @@ footer p:last-child {
     display: flex;
     transform: translateY(0);
   }
-  .nav-links.open::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -1;
-}
 
   .nav-links li {
     margin: 1rem 0;
