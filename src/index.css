@@ -528,7 +528,7 @@ footer p:last-child {
   }
 
   .hamburger {
-    margin-left: 10rem; /* Offset to align with "Bey" in hero h2 */
+    margin-left: 3rem; /* Offset to align with "Bey" in hero h2 */
     position: relative;
     right: auto;
   }
