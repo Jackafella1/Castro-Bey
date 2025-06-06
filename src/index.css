@@ -20,6 +20,7 @@ nav {
   background-color: rgba(0, 0, 0, 0.8); /* bg-black bg-opacity-80 */
   padding: 1rem; /* p-4 */
   z-index: 1000; /* Ensure navbar stays above content */
+  overflow: visible; /* Prevent clipping */
 }
 
 nav .container {
@@ -28,6 +29,7 @@ nav .container {
   display: flex;
   justify-content: space-between; /* justify-between */
   align-items: center; /* items-center */
+  overflow: visible; /* Ensure content isn't clipped */
 }
 
 nav h1 {
@@ -231,7 +233,7 @@ section#shows .grid {
 }
 
 section#shows .card {
-  background-color: #374151; /* bg-gray-700 */
+  background-color: #374151; /* bg-gray-700 */;
   padding: 1.5rem; /* p-6 */
   border-radius: 0.5rem; /* rounded-lg */
 }
@@ -307,7 +309,7 @@ section#store .bandcamp-card iframe {
 
 section#store .bandcamp-card .buy-now {
   display: block;
-  width: 100%;
+  width: 100%;;
   margin-top: 1rem; /* mt-4 */
   padding: 0.75rem; /* p-3 */
   background-color: #22c55e; /* bg-green-500 */
@@ -337,12 +339,11 @@ section#store .bandcamp-cta {
 }
 
 section#store .bandcamp-cta a {
-  color: #22c55e; /* text-green-500 */
+  color: #22c55e; /* text-green-700 */
   text-decoration: none;
 }
 
 section#store .bandcamp-cta a:hover {
-  text-decoration: underline;
   color: #16a34a; /* hover:text-green-600 */
 }
 
@@ -517,10 +518,10 @@ footer p:last-child {
     font-size: 1.5rem; /* Larger text for mobile */
   }
 
-  /* Adjust hamburger position to align with "Bey" in hero h2 */
+  /* Adjust hamburger position for visibility */
   nav .container {
     justify-content: flex-start; /* Align items to the left */
-    padding-left: 1rem; /* Match hero's approximate left padding */
+    padding-left: 1rem; /* Match typical mobile padding */
   }
 
   nav h1 {
@@ -528,9 +529,20 @@ footer p:last-child {
   }
 
   .hamburger {
-    margin-left: 3rem; /* Offset to align with "Bey" in hero h2 */
+    margin-left: 2rem; /* Move closer to h1 for visibility */
     position: relative;
     right: auto;
+  }
+}
+
+/* Extra adjustment for very narrow screens */
+@media (max-width: 375px) {
+  .hamburger {
+    margin-left: 1rem; /* Further reduce for smaller screens */
+  }
+
+  nav .container {
+    padding-left: 0.5rem; /* Reduce padding on very small screens */
   }
 }
 
