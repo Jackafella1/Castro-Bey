@@ -120,7 +120,7 @@ const toggleMenu = () => {
             </div>
             <div className="bandcamp-card">
               <iframe 
-              style={{ border: 0, width: '350px', height: '470px', }}
+              style={{ border: 0, width: '100%', height: '470px', }}
               src="https://bandcamp.com/EmbeddedPlayer/album=827681123/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" 
               seamless
               title="Bey Prints instrumentals Vo 1"
@@ -134,7 +134,7 @@ const toggleMenu = () => {
             </div>
             <div className="bandcamp-card">
               <iframe
-                style={{ border: 0, width: '350px', height: '470px' }}
+                style={{ border: 0, width: '100%', height: '470px' }}
                 src="https://bandcamp.com/EmbeddedPlayer/album=313216474/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
                 seamless
                 title="Bey Prints Instrumentals Vol 2 by Castro Bey Recordings"
