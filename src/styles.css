@@ -20,6 +20,7 @@ nav {
   background-color: rgba(0, 0, 0, 0.8); /* bg-black bg-opacity-80 */
   padding: 1rem; /* p-4 */
   z-index: 1000; /* Ensure navbar stays above content */
+  overflow: visible; /* Prevent clipping */
 }
 
 nav .container {
@@ -28,6 +29,7 @@ nav .container {
   display: flex;
   justify-content: space-between; /* justify-between */
   align-items: center; /* items-center */
+  overflow: visible; /* Ensure content isn't clipped */
 }
 
 nav h1 {
@@ -419,21 +421,18 @@ section#booking .form-container textarea {
 section#booking .form-container button {
   width: 100%; /* w-full */
   padding: 0.75rem; /* p-3 */
-  background-color: #dc2626; /* bg-red-600 */
-  border-radius: 0.5rem; /* rounded-lg */
-  color: #ffffff;
+  background-color: #22c55e; /* bg-green-500 */
+  color: #ffffff; /* text-white */
   border: none;
+  border-radius: 0.5rem; /* rounded-lg */
+  font-size: 1rem; /* text-base */
   cursor: pointer;
+  margin-top: 1rem; /* mt-4 */
+  transition: background-color 0.2s;
 }
 
 section#booking .form-container button:hover {
-  background-color: #b91c1c; /* hover:bg-red-700 */
-}
-
-section#booking .placeholder {
-  text-align: center; /* text-center */
-  margin-top: 1rem; /* mt-4 */
-  color: #9ca3af; /* text-gray-400 */
+  background-color: #16a34a; /* hover:bg-green-600 */
 }
 
 /* Footer */
@@ -515,6 +514,32 @@ footer p:last-child {
 
   .nav-links li a {
     font-size: 1.5rem; /* Larger text for mobile */
+  }
+
+  nav .container {
+    justify-content: flex-start; /* Align items to the left */
+    padding-left: 1rem; /* Match typical mobile padding */
+  }
+
+  nav h1 {
+    margin-right: auto; /* Push h1 to the left */
+  }
+
+  .hamburger {
+    margin-left: 2rem; /* Move closer to h1 for visibility */
+    position: relative;
+    right: auto;
+  }
+}
+
+/* Extra adjustment for very narrow screens */
+@media (max-width: 375px) {
+  .hamburger {
+    margin-left: 1rem; /* Further reduce for smaller screens */
+  }
+
+  nav .container {
+    padding-left: 0.5rem; /* Reduce padding on very small screens */
   }
 }
 
