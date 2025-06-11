@@ -1,3 +1,4 @@
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -27,7 +28,7 @@ nav .container {
   max-width: 1280px; /* container */
   margin: 0 auto; /* mx-auto */
   display: flex;
-  justify-content: space-between; /* justify-between */
+  justify-content: space-between; /* Push hamburger to the right */
   align-items: center; /* items-center */
   overflow: visible; /* Ensure content isn't clipped */
 }
@@ -58,29 +59,26 @@ nav h1 {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.25rem; /* Reduced padding for smaller size */
+  background-color: #ffffff; /* White background to stand out */
+  border-radius: 4px; /* Slight rounding, minimal to preserve shape */
+  transition: background-color 0.3s ease;
+  margin-right: 0.25rem; /* Match previous left margin for consistency */
 }
 
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #ffffff;
-  margin: 5px 0;
-  transition: all 0.3s ease;
+.hamburger:hover {
+  background-color: #e5e7eb; /* Light gray hover effect */
+}
+
+.hamburger svg {
+  font-size: 1.5rem; /* Reduced from 2rem to 1.5rem for smaller size (24px) */
+  color: #000000; /* Black icon for contrast against white background */
 }
 
 /* Transform hamburger into X when open */
-.hamburger[aria-expanded="true"] span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger[aria-expanded="true"] span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger[aria-expanded="true"] span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+.hamburger[aria-expanded="true"] svg {
+  font-size: 1.5rem; /* Consistent size for X */
+  color: #000000; /* Black X for contrast */
 }
 
 /* Hero Section */
@@ -199,14 +197,44 @@ section#videos h2 {
   margin-bottom: 2rem; /* mb-8 */
 }
 
-section#videos .video-container {
-  max-width: 1024px; /* max-w-4xl */
-  margin: 0 auto; /* mx-auto */
+section#videos .grid {
+  display: grid; /* grid */
+  grid-template-columns: 1fr; /* grid-cols-1 */
+  gap: 2rem; /* gap-8 */
 }
 
-section#videos iframe {
-  width: 100%; /* w-full */
-  height: 16rem; /* h-64 */
+section#videos .card {
+  background-color: #374151; /* bg-gray-700 */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+section#videos .card h3 {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+section#videos .card iframe {
+  width: 100%;
+  height: 315px; /* Matches provided embed height */
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+section#videos .card a {
+  display: inline-block; /* inline-block */
+  margin-top: 1rem; /* mt-4 */
+  color: #dc2626; /* text-red-600 for YouTube */
+}
+
+section#videos .card a:hover {
+  text-decoration: underline; /* hover:underline */
+}
+
+section#videos .placeholder {
+  text-align: center; /* text-center */
+  margin-top: 2rem; /* mt-8 */
+  color: #9ca3af; /* text-gray-400 */
 }
 
 /* Shows Section */
@@ -477,8 +505,12 @@ footer p:last-child {
     grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
   }
 
-  section#videos iframe {
-    height: 24rem; /* md:h-96 */
+  section#videos .grid {
+    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 for videos */
+  }
+
+  section#videos .card iframe {
+    height: 315px; /* Maintain height on larger screens */
   }
 }
 
@@ -486,6 +518,7 @@ footer p:last-child {
 @media (max-width: 768px) {
   .hamburger {
     display: block;
+    margin-right: 0.25rem; /* Moved to right with matching spacing */
   }
 
   .nav-links {
@@ -517,25 +550,19 @@ footer p:last-child {
   }
 
   nav .container {
-    justify-content: flex-start; /* Align items to the left */
+    justify-content: space-between; /* Ensure title stays left, hamburger goes right */
     padding-left: 1rem; /* Match typical mobile padding */
   }
 
   nav h1 {
-    margin-right: auto; /* Push h1 to the left */
-  }
-
-  .hamburger {
-    margin-left: 2rem; /* Move closer to h1 for visibility */
-    position: relative;
-    right: auto;
+    margin-right: 0; /* Remove extra space since hamburger is now on right */
   }
 }
 
 /* Extra adjustment for very narrow screens */
 @media (max-width: 375px) {
   .hamburger {
-    margin-left: 1rem; /* Further reduce for smaller screens */
+    margin-right: 0.1rem; /* Further adjust right margin for very narrow screens */
   }
 
   nav .container {
