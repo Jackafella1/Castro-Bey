@@ -1,16 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import heroImage from '../images/hero-image.webp';
-import { FaBars, FaTimes } from 'react-icons/fa';
 import './styles.css';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const buttonRef = useRef(null);
 
-  const toggleMenu = () => {
-    console.log("Toggling menu, current state:", isMenuOpen);
-    setIsMenuOpen(!isMenuOpen);
-    console.log("New state:", !isMenuOpen);
+  const handleMenuClick = () => {
+    console.log("Menu clicked, current state:", isMenuOpen);
+    setIsMenuOpen((prevState) => {
+      const newState = !prevState;
+      console.log("New state:", newState);
+      return newState;
+    });
   };
+
+  useEffect(() => {
+    const handleClose = (e) => {
+      if (isMenuOpen && buttonRef.current && buttonRef.current.contains(e.target)) {
+        const isCloseIcon = e.target.className === 'hamburger-icon' && isMenuOpen;
+        if (isCloseIcon) {
+          console.log("Close icon clicked, closing menu");
+          setIsMenuOpen(false);
+        }
+      }
+    };
+
+    const buttonElement = buttonRef.current;
+    if (buttonElement) {
+      buttonElement.addEventListener('click', handleClose);
+    }
+
+    return () => {
+      if (buttonElement) {
+        buttonElement.removeEventListener('click', handleClose);
+      }
+    };
+  }, [isMenuOpen]);
 
   return (
     <div>
@@ -19,20 +45,21 @@ const App = () => {
         <div className="container">
           <h1>Castro Bey</h1>
           <button
+            ref={buttonRef}
             className="hamburger"
-            onClick={toggleMenu}
+            onClick={handleMenuClick}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
           >
-            {isMenuOpen ? <FaTimes /> : <FaBars />}
+            <span className="hamburger-icon"></span>
           </button>
-          <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-            <li><a href="#music" onClick={toggleMenu}>Music</a></li>
-            <li><a href="#videos" onClick={toggleMenu}>Videos</a></li>
-            <li><a href="#shows" onClick={toggleMenu}>Shows</a></li>
-            <li><a href="#store" onClick={toggleMenu}>Store</a></li>
-            <li><a href="#about" onClick={toggleMenu}>About</a></li>
-            <li><a href="#booking" onClick={toggleMenu}>Booking</a></li>
+          <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
+            <li><a href="#music" onClick={handleMenuClick}>Music</a></li>
+            <li><a href="#videos" onClick={handleMenuClick}>Videos</a></li>
+            <li><a href="#shows" onClick={handleMenuClick}>Shows</a></li>
+            <li><a href="#store" onClick={handleMenuClick}>Store</a></li>
+            <li><a href="#about" onClick={handleMenuClick}>About</a></li>
+            <li><a href="#booking" onClick={handleMenuClick}>Booking</a></li>
           </ul>
         </div>
       </nav>
@@ -106,7 +133,6 @@ const App = () => {
           </div>
           <p className="placeholder"></p>
         </div>
-
       </section>
 
       {/* Videos Section */}
@@ -197,7 +223,7 @@ const App = () => {
                 <a href="https://castrobey.bandcamp.com/album/bey-prints-instrumentals-vol1" target="_blank" rel="noopener noreferrer">Buy Now</a>
               </button>
             </div>
-            <div className="bandcamp-card">
+            <div className="card">
               <iframe
                 style={{ border: 0, width: '100%', height: '470px' }}
                 src="https://bandcamp.com/EmbeddedPlayer/album=313216474/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"

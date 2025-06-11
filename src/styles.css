@@ -11,6 +11,7 @@ body {
   color: #ffffff; /* text-white */
   min-height: 100vh; /* min-h-screen */
   font-family: Arial, sans-serif;
+  padding-top: 4rem; /* Space for fixed navbar */
 }
 
 /* Navbar */
@@ -53,33 +54,62 @@ nav h1 {
   color: #9ca3af; /* hover:text-gray-400 */
 }
 
-/* Hamburger Menu */
 .hamburger {
-  display: none;
+  position: relative; /* Matches typical icon positioning */
+  width: 30px; /* Adjust to match your current icon size */
+  height: 30px; /* Adjust to match your current icon size */
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.25rem; /* Reduced padding for smaller size */
-  background-color: #ffffff; /* White background to stand out */
-  border-radius: 4px; /* Slight rounding, minimal to preserve shape */
-  transition: background-color 0.3s ease;
-  margin-right: 0.25rem; /* Match previous left margin for consistency */
+  padding: 0;
+  z-index: 10; /* Ensure it stays above other elements */
 }
 
-.hamburger:hover {
-  background-color: #e5e7eb; /* Light gray hover effect */
+.hamburger-icon {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ece6e6; /* Adjust color to match your theme */
+  transition: all 0.3s ease; /* Smooth transition for animation */
 }
 
-.hamburger svg {
-  font-size: 1.5rem; /* Reduced from 2rem to 1.5rem for smaller size (24px) */
-  color: #000000; /* Black icon for contrast against white background */
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #f9f7f7; /* Adjust color to match your theme */
+  transition: all 0.3s ease;
 }
 
-/* Transform hamburger into X when open */
-.hamburger[aria-expanded="true"] svg {
-  font-size: 1.5rem; /* Consistent size for X */
-  color: #000000; /* Black X for contrast */
+.hamburger-icon::before {
+  top: -8px; /* Space between lines, adjust as needed */
 }
+
+.hamburger-icon::after {
+  top: 8px; /* Space between lines, adjust as needed */
+}
+
+/* Transform to "X" when menu is open */
+.hamburger[aria-expanded="true"] .hamburger-icon {
+  background-color: transparent; /* Hide the middle line */
+}
+
+.hamburger[aria-expanded="true"] .hamburger-icon::before {
+  transform: rotate(45deg) translate(5px, 5px); /* Top line to top of "X" */
+}
+
+.hamburger[aria-expanded="true"] .hamburger-icon::after {
+  transform: rotate(-45deg) translate(5px, -5px); /* Bottom line to bottom of "X" */
+}
+
+/* Ensure the button stays interactive */
+.hamburger:focus {
+  outline: none; /* Remove default outline if desired */
+}
+
 
 /* Hero Section */
 section.hero {
