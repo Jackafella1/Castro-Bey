@@ -333,6 +333,14 @@ section#shows .placeholder {
   color: #9ca3af; /* text-gray-400 */
 }
 
+@media (min-width: 768px) {
+  section#shows .grid {
+    grid-template-columns: repeat(3, minmax(0, 300px)); /* Fixed width columns */
+    justify-content: center; /* Center the columns */
+    gap: 2rem;
+  }
+}
+
 /* Store Section */
 section#store {
   padding: 4rem 1rem; /* py-16 */
@@ -446,6 +454,7 @@ section#about .content p {
 }
 
 /* Booking Section */
+/* Booking Section */
 section#booking {
   padding: 4rem 1rem; /* py-16 */
   background-color: #1f2937; /* bg-gray-800 */
@@ -470,39 +479,39 @@ section#booking .form-container {
 
 section#booking .form-container p {
   margin-bottom: 1rem; /* mb-4 */
+  text-align: center; /* text-center */
 }
 
-section#booking .form-container .form-group {
+section#booking .form-group {
   display: flex; /* space-y-4 equivalent */
   flex-direction: column;
   gap: 1rem;
+  align-items: center; /* Center the link */
 }
 
-section#booking .form-container input,
-section#booking .form-container textarea {
-  width: 100%; /* w-full */
+section#booking .booking-link {
+  display: block;
+  width: 100%;
+  max-width: 200px; /* Limit width for better appearance */
   padding: 0.75rem; /* p-3 */
-  background-color: #1f2937; /* bg-gray-800 */
-  border-radius: 0.5rem; /* rounded-lg */
-  border: none;
-  color: #ffffff;
-}
-
-section#booking .form-container button {
-  width: 100%; /* w-full */
-  padding: 0.75rem; /* p-3 */
-  background-color: #22c55e; /* bg-green-500 */
+  background-color: #ec4899; /* Match Instagram pink, text-pink-500 */
   color: #ffffff; /* text-white */
-  border: none;
+  text-align: center;
   border-radius: 0.5rem; /* rounded-lg */
+  border: none;
   font-size: 1rem; /* text-base */
+  text-decoration: none;
   cursor: pointer;
-  margin-top: 1rem; /* mt-4 */
-  transition: background-color 0.2s;
 }
 
-section#booking .form-container button:hover {
-  background-color: #16a34a; /* hover:bg-green-600 */
+section#booking .booking-link:hover {
+  background-color: #db2777; /* Darker shade for hover, hover:text-pink-400 */
+}
+
+section#booking .placeholder {
+  text-align: center; /* text-center */
+  margin-top: 2rem; /* mt-8 */
+  color: #9ca3af; /* text-gray-400 */
 }
 
 /* Footer */

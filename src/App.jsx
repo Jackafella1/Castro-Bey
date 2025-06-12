@@ -186,7 +186,7 @@ const App = () => {
               <a href="#">Get Tickets</a>
             </div>
           </div>
-          <p className="placeholder">Replace with Castro Bey’s event details from Strapi</p>
+          <p className="placeholder">Stay tuned for updates on upcoming events. Watch this space for further details.</p>
         </div>
       </section>
 
@@ -250,27 +250,31 @@ const App = () => {
           <h2>About Castro Bey</h2>
           <div className="content">
             <p>I’m a self-taught music man carrying on the legacy of my grandad "Castro," one of Derby’s finest reggae DJs. My choice of music is conscious hip-hop, aiming to tap into people’s higher selves. I’m an emcee, producer, and engineer, and one of the founding members of the Dredeye Knights, a Derby hip-hop group. I create all my own videos and music, as I just love to create.</p>
-            <p>Update bio via Strapi admin panel at https://admin.castrobey.com</p>
+            
           </div>
         </div>
       </section>
 
       {/* Booking Section */}
       <section id="booking">
-        <div className="container">
-          <h2>Book Castro Bey</h2>
-          <div className="form-container">
-            <p>Want Castro Bey at your event? Hit us up!</p>
-            <div className="form-group">
-              <input type="text" placeholder="Your Name" />
-              <input type="email" placeholder="Your Email" />
-              <textarea placeholder="Event Details"></textarea>
-              <button>Send Inquiry</button>
-            </div>
-            <p className="placeholder">Add Castro Bey’s booking email or manager contact from Strapi</p>
-          </div>
-        </div>
-      </section>
+  <div className="container">
+    <h2>Book Castro Bey</h2>
+    <div className="form-container">
+      <p>Interested in booking Castro Bey for your event? Reach out to him directly via Instagram.</p>
+      <div className="form-group">
+        <a
+          href="https://www.instagram.com/castro_13ey/?hl=en-gb"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="booking-link"
+        >
+          Contact on Instagram
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer>
