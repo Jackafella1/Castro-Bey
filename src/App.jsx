@@ -209,6 +209,7 @@ const App = () => {
               <button className="buy-now">
                 <a href="https://castrobey.bandcamp.com/album/2-moorish" target="_blank" rel="noopener noreferrer">Buy Now</a>
               </button>
+
             </div>
             <div className="bandcamp-card">
               <iframe 
@@ -222,8 +223,9 @@ const App = () => {
               <button className="buy-now">
                 <a href="https://castrobey.bandcamp.com/album/bey-prints-instrumentals-vol1" target="_blank" rel="noopener noreferrer">Buy Now</a>
               </button>
+              
             </div>
-            <div className="card">
+            <div className="bandcamp-card">
               <iframe
                 style={{ border: 0, width: '100%', height: '470px' }}
                 src="https://bandcamp.com/EmbeddedPlayer/album=313216474/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
