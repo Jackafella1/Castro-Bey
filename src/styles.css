@@ -53,9 +53,9 @@ nav h1 {
   color: #9ca3af; /* hover:text-gray-400 */
 }
 
-/* Improved Hamburger Menu */
+/* Improved Hamburger Menu - Hidden by default */
 .hamburger {
-  display: flex;
+  display: none; /* Hidden on desktop */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -551,7 +551,7 @@ footer p:last-child {
 /* Mobile Navbar Styles */
 @media (max-width: 768px) {
   .hamburger {
-    display: flex;
+    display: flex; /* Show hamburger on mobile */
     margin-right: 0.25rem;
   }
 
