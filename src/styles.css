@@ -1,4 +1,3 @@
-
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -54,15 +53,19 @@ nav h1 {
   color: #9ca3af; /* hover:text-gray-400 */
 }
 
+/* Improved Hamburger Menu */
 .hamburger {
-  position: relative; /* Matches typical icon positioning */
-  width: 30px; /* Adjust to match your current icon size */
-  height: 30px; /* Adjust to match your current icon size */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10; /* Ensure it stays above other elements */
+  z-index: 10;
 }
 
 .hamburger-icon {
@@ -70,46 +73,47 @@ nav h1 {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #ece6e6; /* Adjust color to match your theme */
-  transition: all 0.3s ease; /* Smooth transition for animation */
+  background-color: #ece6e6;
+  transition: all 0.3s ease;
 }
 
 .hamburger-icon::before,
 .hamburger-icon::after {
   content: '';
   position: absolute;
+  left: 0;
   width: 100%;
   height: 2px;
-  background-color: #f9f7f7; /* Adjust color to match your theme */
+  background-color: #f9f7f7;
   transition: all 0.3s ease;
 }
 
 .hamburger-icon::before {
-  top: -8px; /* Space between lines, adjust as needed */
+  top: -8px;
 }
 
 .hamburger-icon::after {
-  top: 8px; /* Space between lines, adjust as needed */
+  top: 8px;
 }
 
 /* Transform to "X" when menu is open */
 .hamburger[aria-expanded="true"] .hamburger-icon {
-  background-color: transparent; /* Hide the middle line */
+  background-color: transparent;
 }
 
 .hamburger[aria-expanded="true"] .hamburger-icon::before {
-  transform: rotate(45deg) translate(5px, 5px); /* Top line to top of "X" */
+  top: 0;
+  transform: rotate(45deg);
 }
 
 .hamburger[aria-expanded="true"] .hamburger-icon::after {
-  transform: rotate(-45deg) translate(5px, -5px); /* Bottom line to bottom of "X" */
+  top: 0;
+  transform: rotate(-45deg);
 }
 
-/* Ensure the button stays interactive */
 .hamburger:focus {
-  outline: none; /* Remove default outline if desired */
+  outline: none;
 }
-
 
 /* Hero Section */
 section.hero {
@@ -547,8 +551,8 @@ footer p:last-child {
 /* Mobile Navbar Styles */
 @media (max-width: 768px) {
   .hamburger {
-    display: block;
-    margin-right: 0.25rem; /* Moved to right with matching spacing */
+    display: flex;
+    margin-right: 0.25rem;
   }
 
   .nav-links {
@@ -558,7 +562,7 @@ footer p:last-child {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9); /* Match nav bg with higher opacity */
+    background-color: rgba(0, 0, 0, 0.9);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -576,27 +580,27 @@ footer p:last-child {
   }
 
   .nav-links li a {
-    font-size: 1.5rem; /* Larger text for mobile */
+    font-size: 1.5rem;
   }
 
   nav .container {
-    justify-content: space-between; /* Ensure title stays left, hamburger goes right */
-    padding-left: 1rem; /* Match typical mobile padding */
+    justify-content: space-between;
+    padding-left: 1rem;
   }
 
   nav h1 {
-    margin-right: 0; /* Remove extra space since hamburger is now on right */
+    margin-right: 0;
   }
 }
 
 /* Extra adjustment for very narrow screens */
 @media (max-width: 375px) {
   .hamburger {
-    margin-right: 0.1rem; /* Further adjust right margin for very narrow screens */
+    margin-right: 0.1rem;
   }
 
   nav .container {
-    padding-left: 0.5rem; /* Reduce padding on very small screens */
+    padding-left: 0.5rem;
   }
 }
 
