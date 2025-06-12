@@ -154,9 +154,7 @@ const App = () => {
               <a href="https://www.youtube.com/watch?v=IGbaxY9nxVc" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
             </div>
 
-            <div></div>
-            <div></div>
-            <div></div>
+            
           
           <div className="card">
               <h3>WHISPERS</h3> {/* Update with actual video title */}

@@ -241,6 +241,7 @@ section#videos .card {
   background-color: #374151; /* bg-gray-700 */
   padding: 1.5rem; /* p-6 */
   border-radius: 0.5rem; /* rounded-lg */
+  margin-bottom: 2rem; /* Adds extra spacing between cards */
 }
 
 section#videos .card h3 {
@@ -269,6 +270,13 @@ section#videos .placeholder {
   text-align: center; /* text-center */
   margin-top: 2rem; /* mt-8 */
   color: #9ca3af; /* text-gray-400 */
+}
+/* Videos Section - Mobile View */
+@media (max-width: 767px) {
+  section#videos .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /* Adds consistent 2rem gap between video cards on mobile */
+  }
 }
 
 /* Shows Section */
