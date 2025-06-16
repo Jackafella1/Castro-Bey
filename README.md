@@ -1,5 +1,6 @@
-Castro Bey
+
 Project Overview
+
 Welcome to Castro Bey, a web application designed to showcase the music and creative work of the artist Castro Bey. Built with React and styled using custom CSS, this app offers a dark-themed, responsive interface to engage fans with a seamless experience across devices. It features sections for music releases, videos, upcoming shows, merchandise via Bandcamp, an about page, and booking options, with integrations to Spotify, Instagram, YouTube, and Bandcamp.
 🌟 Features
 
@@ -14,6 +15,8 @@ Screenshots
 
 Project Structure
 The Castro Bey project is a monorepo containing the frontend:
+
+
 CASTRO-BEY/
 ├── index.html                 # Frontend entry point
 ├── script.js                 # Frontend JavaScript logic
